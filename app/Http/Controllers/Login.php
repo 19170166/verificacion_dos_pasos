@@ -38,9 +38,10 @@ class Login extends Controller
     public function GenCode(Request $request){
         $user = User::where('email', $request->email)->first();
         $code = random_int(100000, 999999);
+        $hashCode = Hash::make($code);
         DB::table('codes')->insert([
             'user_id'=>$user->id,
-            'user_code'=>$code,
+            'user_code'=>$hashCode,
         ]);
         return $code;
 

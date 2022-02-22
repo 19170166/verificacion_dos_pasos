@@ -16,7 +16,7 @@ class Code extends Migration
         Schema::create('codes', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->integer('user_code');
+            $table->string('user_code');
         });
     }
 
@@ -27,6 +27,6 @@ class Code extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('codes');
     }
 }
