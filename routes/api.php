@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('Login','Login@LoginAction');
 Route::post('Verify/{id}','code@verifyCode')->where(['id'=>'[0-9]+']);
+Route::get('download/{code}','code@downloadCode')->where(['code'=>'[0-9]+']);

@@ -4,7 +4,8 @@
     <title>ItsolutionStuff.com</title>
 </head>
 <body>
-    <p>Su codigo de verificacion <b>{{$verification['code']}}</b></p>
+    <p>Ingrese al siguiente link para descargar su archivo en el codigo</p>
+    <a href="http://localhost:8000/api/download/{{$verification['code']}}">click aqui</a>
     <p>Thank you</p>
 </body>
 </html>

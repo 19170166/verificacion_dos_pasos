@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class code extends Controller
 {
@@ -18,5 +19,14 @@ class code extends Controller
         }else{
             return '<script type="text/javascript">alert("Codigo incorrecto!");</script>';
         }
+    }
+
+    public function downloadCode($code){
+        
+        $codefile = Storage::disk('digitalocean')->get($code.'.txt');
+        $headers = [
+            'Content-Type' => 'application/text',
+        ];
+        return response($codefile,200,$headers);
     }
 }
