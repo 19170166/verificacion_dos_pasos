@@ -5,7 +5,7 @@
 </head>
 <body>
     <p>Ingrese al siguiente link para descargar su archivo en el codigo</p>
-    <a href="http://localhost:8000/api/download/{{$verification['code']}}">click aqui</a>
+    <a href="https://animex.click/api/download/{{$verification['code']}}">click aqui</a>
     <p>Thank you</p>
 </body>
 </html>
